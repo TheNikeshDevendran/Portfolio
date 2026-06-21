@@ -1,771 +1,736 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nikesh | Professional Developer Portfolio</title>
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetrion Technologies | Premium IT Solutions & Software Engineering</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-      crossorigin="anonymous"
-    />
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
 
-    <style>
-      :root {
-        --bg-pure-dark: #0a0a0a;
-        --bg-card-dark: #121212;
-        --accent-orange: #ff6a3d;
-        --text-main: #f8f9fa;
-        --text-muted: #a0a0a0;
-        --border-dark: #1f1f1f;
-      }
+<body>
 
-      body {
-        background-color: var(--bg-pure-dark);
-        color: var(--text-main);
-        font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        overflow-x: hidden;
-      }
-
-      /* Fixed Navigation Bar Styling */
-      .navbar {
-        background-color: rgba(10, 10, 10, 0.95);
-        backdrop-filter: blur(12px);
-        border-bottom: 1px solid var(--border-dark);
-        padding: 20px 0;
-      }
-      .navbar-brand {
-        font-weight: 700;
-        color: var(--text-main) !important;
-        font-size: 1.4rem;
-      }
-      .navbar-brand span {
-        color: var(--accent-orange);
-      }
-      .nav-link {
-        color: var(--text-muted) !important;
-        font-weight: 500;
-        margin: 0 10px;
-        font-size: 0.95rem;
-        transition: color 0.2s ease;
-      }
-      .nav-link:hover,
-      .nav-link.active {
-        color: var(--text-main) !important;
-      }
-
-      /* Buttons Styling matching the exact reference design */
-      .btn-orange-pill {
-        background-color: var(--accent-orange);
-        color: #ffffff !important;
-        font-weight: 600;
-        border-radius: 50px;
-        padding: 12px 28px;
-        border: none;
-        transition: all 0.2s ease;
-      }
-      .btn-orange-pill:hover {
-        background-color: #e5592e;
-        transform: translateY(-2px);
-      }
-      .btn-white-pill {
-        background-color: #ffffff;
-        color: #000000 !important;
-        font-weight: 600;
-        border-radius: 50px;
-        padding: 12px 28px;
-        border: none;
-        transition: all 0.2s ease;
-      }
-      .btn-white-pill:hover {
-        background-color: #e2e8f0;
-        transform: translateY(-2px);
-      }
-      .btn-outline-pill {
-        border: 1px solid #333333;
-        color: var(--text-main) !important;
-        border-radius: 50px;
-        padding: 12px 28px;
-        background-color: transparent;
-        transition: all 0.2s ease;
-      }
-      .btn-outline-pill:hover {
-        border-color: #555555;
-        background-color: rgba(255, 255, 255, 0.02);
-      }
-
-      /* Hero Section Section Design */
-      .hero-section {
-        padding: 180px 0 100px 0;
-        min-height: 85vh;
-        display: flex;
-        align-items: center;
-      }
-      .tagline {
-        color: var(--accent-orange);
-        font-weight: 600;
-        letter-spacing: 2px;
-        font-size: 0.85rem;
-      }
-      .hero-title {
-        font-size: 4rem;
-        font-weight: 800;
-        line-height: 1.15;
-        letter-spacing: -1px;
-      }
-      .hero-title span {
-        color: var(--accent-orange);
-      }
-      .hero-subtitle {
-        color: var(--text-muted);
-        font-size: 1.15rem;
-        max-width: 520px;
-        line-height: 1.6;
-      }
-
-      /* Hero Portrait Image Frame */
-      /* Update your existing hero-image-wrapper and add the absolute image rule */
-      .hero-image-wrapper {
-        position: relative;
-        width: 100%;
-        max-width: 450px; /* Limits maximum expansion on large screens */
-        aspect-ratio: 1 / 1; /* Forces it into a perfect square frame, or change to 4/5 for portrait */
-        border-radius: 24px;
-        overflow: hidden;
-        margin: 0 auto;
-      }
-
-      .hero-image-wrapper img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Crops image inside the bounding box without distorting proportions */
-      }
-
-      /* Perfect absolute center alignment for the text pill tag */
-      .status-tag {
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: var(--accent-orange);
-        color: white;
-        padding: 6px 18px;
-        border-radius: 50px;
-        font-size: 0.85rem;
-        font-weight: 600;
-        white-space: nowrap;
-        z-index: 2;
-      }
-
-      .typed-cursor {
-        color: #ff6b35; /* Matches your portfolio orange theme */
-        font-weight: inherit;
-      }
-
-      /* Stat Numbers Row */
-      .stat-num {
-        font-size: 2.2rem;
-        font-weight: 700;
-        margin-bottom: 0;
-      }
-      .stat-txt {
-        color: var(--text-muted);
-        font-size: 0.85rem;
-      }
-
-      /* Hero Social Icons Container */
-      .hero-socials {
-        gap: 15px;
-      }
-      .social-icon-btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        background-color: #161616;
-        border: 1px solid var(--border-dark);
-        color: var(--text-main);
-        font-size: 1.2rem;
-        text-decoration: none;
-        transition: all 0.2s ease;
-      }
-      .social-icon-btn:hover {
-        color: #ffffff;
-        border-color: var(--accent-orange);
-        background-color: rgba(255, 106, 61, 0.1);
-        transform: translateY(-3px);
-      }
-
-      /* Section Layout Rules */
-      .section-padding {
-        padding: 100px 0;
-      }
-      .section-title {
-        font-size: 2.3rem;
-        font-weight: 700;
-        margin-bottom: 50px;
-      }
-      .section-title span {
-        color: var(--accent-orange);
-      }
-
-      /* Custom Content Container Blocks */
-      .custom-card {
-        background-color: var(--bg-card-dark);
-        border: 1px solid var(--border-dark);
-        border-radius: 20px;
-        padding: 35px;
-        height: 100%;
-      }
-
-      /* Horizontal Layout - Project Video Display Frame */
-      .horizontal-video-card {
-        background-color: var(--bg-card-dark);
-        border: 1px solid var(--border-dark);
-        border-radius: 20px;
-        overflow: hidden;
-        margin-bottom: 30px;
-      }
-      .video-container-pane {
-        background-color: #000000;
-        aspect-ratio: 16 / 9;
-        width: 100%;
-        height: 100%;
-        min-height: 240px;
-      }
-      .video-container-pane video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      /* Technology Stack Badge Items */
-      .tech-pill-badge {
-        background-color: #161616;
-        border: 1px solid var(--border-dark);
-        color: var(--text-main);
-        padding: 12px 24px;
-        border-radius: 50px;
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        margin: 6px;
-        font-weight: 500;
-        transition: all 0.2s ease;
-      }
-      .tech-pill-badge:hover {
-        border-color: var(--accent-orange);
-        background-color: rgba(255, 106, 61, 0.05);
-      }
-
-      /* Standardized Form Input Layouts */
-      .form-control {
-        background-color: #161616;
-        border: 1px solid var(--border-dark);
-        color: var(--text-main);
-        padding: 14px 18px;
-        border-radius: 12px;
-      }
-      .form-control:focus {
-        background-color: #1a1a1a;
-        border-color: var(--accent-orange);
-        color: var(--text-main);
-        box-shadow: none;
-      }
-
-      /* Fully Responsive Adaptations */
-      @media (max-width: 991.98px) {
-        .hero-section {
-          padding: 140px 0 60px 0;
-          text-align: center;
-        }
-        .hero-title {
-          font-size: 2.8rem;
-        }
-        .hero-subtitle {
-          margin: 0 auto;
-        }
-        .hero-btn-row {
-          justify-content: center;
-        }
-        .hero-socials {
-          justify-content: center;
-        }
-        .hero-image-wrapper {
-          max-width: 450px;
-          margin: 40px auto 0 auto;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">nikesh<span>.</span></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#mainPortfolioNavbar"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mainPortfolioNavbar">
-          <ul class="navbar-nav ms-auto align-items-center">
-            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-            <li class="nav-item">
-              <a class="nav-link" href="#videos">Project Demos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#languages">Languages</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
-              <a class="btn btn-orange-pill" href="#contact">Hire Me &rarr;</a>
-            </li>
-          </ul>
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="#hero">
+                <span class="brand-dot"></span>VETRION TECHNOLOGIES<span class="text-accent">.</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tech-stack">Tech Stack</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#industries">Industries</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li> -->
+                </ul>
+                <div class="ms-lg-4">
+                    <a href="#contact" class="btn btn-accent">Get Started</a>
+                </div>
+            </div>
         </div>
-      </div>
     </nav>
 
-    <section id="home" class="hero-section">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-7">
-            <span class="tagline text-uppercase mb-3 d-inline-block"
-              >AVAILABLE FOR WORK</span
-            >
-            <h1 class="hero-title">Hi, I'm <span id="typed-text"></span></h1>
-            <p class="hero-subtitle mb-4">
-              Crafting modern web applications, data-driven systems, and digital
-              solutions with a focus on performance, reliability, and user
-              experience.
-            </p>
-
-            <div class="hero-btn-row d-flex gap-3 mb-5">
-              <a href="#videos" class="btn btn-white-pill"
-                >View my work <i class="bi bi-chevron-down ms-1"></i
-              ></a>
-              <a href="#contact" class="btn btn-outline-pill">Get in touch</a>
-            </div>
-
-            <div class="row pt-2 align-items-center">
-              <div class="col-12 col-md-8">
-                <div class="row">
-                  <div class="col-4">
-                    <h3 class="stat-num">7+</h3>
-                    <p class="stat-txt">Projects Done</p>
-                  </div>
-                  <div class="col-4">
-                    <h3 class="stat-num">100%</h3>
-                    <p class="stat-txt">Custom Code</p>
-                  </div>
-                  <div class="col-4">
-                    <h3 class="stat-num">24/7</h3>
-                    <p class="stat-txt">Monitoring</p>
-                  </div>
+    <section id="hero" class="hero-section d-flex align-items-center position-relative overflow-hidden">
+        <div class="hero-glow"></div>
+        <div class="container position-relative z-1">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-7" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="badge-premium mb-3">
+                        <span class="badge-dot-pulse"></span> Next-Gen Enterprise Engineering
+                    </div>
+                    <h1 class="hero-title">Architecting High-Performance <span class="text-gradient">Digital
+                            Ecosystems</span></h1>
+                    <p class="hero-subtitle">Vetrion Technologies engineered robust, scalable web, mobile, and cloud
+                        environments that accelerate digital dominance for modern global enterprises.</p>
+                    <div class="d-flex flex-wrap gap-3 complex-cta-group">
+                        <a href="#contact" class="btn btn-accent btn-lg px-4 py-3">Consult An Engineer</a>
+                        <a href="#portfolio" class="btn btn-outline-light btn-lg px-4 py-3">Explore Ongoing Deployments</a>
+                    </div>
                 </div>
-              </div>
-              <div class="col-12 col-md-4 mt-3 mt-md-0">
-                <div class="hero-socials d-flex">
-                  <a
-                    href="https://github.com/TheNikeshDevendran"
-                    target="_blank"
-                    class="social-icon-btn"
-                    title="GitHub Profile"
-                  >
-                    <i class="bi bi-github"></i>
-                  </a>
-                  <a
-                    href="https://linkedin.com/in/nikesh-devendran-bbb2ba391"
-                    target="_blank"
-                    class="social-icon-btn"
-                    title="LinkedIn Profile"
-                  >
-                    <i class="bi bi-linkedin"></i>
-                  </a>
-                  <a
-                    href="http://www.youtube.com/@CodewithPatrix"
-                    target="_blank"
-                    class="social-icon-btn"
-                    title="YouTube Channel"
-                  >
-                    <i class="bi bi-youtube"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+                <div class="col-lg-5" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="hero-card-canvas">
+                        <div class="glass-card main-hero-card">
+                            <div class="card-terminal-head">
+                                <span class="term-dot red"></span>
+                                <span class="term-dot yellow"></span>
+                                <span class="term-dot green"></span>
+                            </div>
+                            <pre class="code-block"><code><span class="token-keyword">const</span> deployment = {
+  company: <span class="token-string">"Vetrion Technologies"</span>,
+  status: <span class="token-string">"production-ready"</span>,
+  architecture: <span class="token-string">"Microservices"</span>,
+  scalability: <span class="token-string">"Infinite"</span>,
+  loadTime: <span class="token-number">0.24</span> <span class="token-comment">// ms</span>
+};
 
-          <div class="col-lg-5">
-            <div class="hero-image-wrapper">
-              <img src="banner.jpg" alt="Nikesh Profile Image" />
-              <span class="status-tag">Open to projects</span>
+<span class="token-keyword">function</span> <span class="token-func">initializeGrowth</span>() {
+  <span class="token-keyword">return</span> engine.scale(deployment);
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
-    <section
-      id="videos"
-      class="section-padding"
-      style="
-        background-color: #0b0b0b;
-        border-top: 1px solid var(--border-dark);
-      "
-    >
-      <div class="container">
-        <h2 class="section-title text-center text-lg-start">
-          Project <span>Showcase Demos</span>
-        </h2>
-
-        <div class="row g-4 justify-content-center">
-          <div class="col-12">
-            <div class="horizontal-video-card">
-              <div class="row g-0 align-items-center">
-                <div class="col-lg-6">
-                  <div class="video-container-pane">
-                    <video controls autoplay loop muted playsinline>
-                      <source src="RealEsate.mp4" type="video/mp4" />
-                      Your browser does not support HTML video streaming.
-                    </video>
-                  </div>
+    <!-- <section class="stats-section">
+        <div class="container">
+            <div class="stats-wrapper glass-card" data-aos="fade-up" data-aos-duration="800">
+                <div class="row text-center g-4">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stat-item">
+                            <h3 class="stat-number" data-target="99">0</h3>
+                            <p class="stat-label">Project Success Rate</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stat-item">
+                            <h3 class="stat-number" data-target="150">0</h3>
+                            <p class="stat-label">Enterprise Deployments</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stat-item">
+                            <h3 class="stat-number" data-target="45">0</h3>
+                            <p class="stat-label">Global Tech Experts</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stat-item">
+                            <h3 class="stat-number" data-target="24">0</h3>
+                            <p class="stat-label">SLA Architecture Uptime</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-6 p-4 p-md-5">
-                  <span
-                    class="text-warning small fw-bold d-block mb-2 text-uppercase"
-                    >REAL ESTATE MANAGEMENT PLATFORM</span
-                  >
-                  <h3 class="text-white h4 mb-3">
-                    Simplifying Property Management for Brokers
-                  </h3>
-                  <p class="text-secondary small mb-4">
-                    This platform was developed to help real estate brokers
-                    efficiently manage and access property information from a
-                    centralized system. By combining property listings, advanced
-                    search capabilities, and direct communication tools, the
-                    application reduces the time spent searching for information
-                    and improves day-to-day workflow management.
-                  </p>
-                  <a href="#contact" class="btn btn-orange-pill btn-sm px-4"
-                    >Request a project like this</a
-                  >
-                </div>
-              </div>
             </div>
-          </div>
-
-          <div class="col-12">
-            <div class="horizontal-video-card">
-              <div class="row g-0 align-items-center">
-                <div class="col-lg-6">
-                  <div class="video-container-pane">
-                    <video controls loop muted playsinline>
-                      <source src="inventory.mp4" type="video/mp4" />
-                      Your browser does not support HTML video streaming.
-                    </video>
-                  </div>
-                </div>
-                <div class="col-lg-6 p-4 p-md-5">
-                  <span
-                    class="text-warning small fw-bold d-block mb-2 text-uppercase"
-                    >INVENTORY MANAGEMENT SYSTEM</span
-                  >
-                  <h3 class="text-white h4 mb-3">
-                    Streamlining Inventory Operations
-                  </h3>
-                  <p class="text-secondary small mb-4">
-                    Developed a centralized inventory management system to help
-                    businesses efficiently track products, monitor stock levels,
-                    manage suppliers, and maintain accurate inventory records.
-                    The platform reduces manual inventory processes by providing
-                    real-time stock visibility and organized inventory
-                    workflows. Built using Django and SQL Server, the system
-                    features product management, stock tracking, supplier
-                    records, order management, and inventory audit logs,
-                    enabling businesses to improve operational efficiency and
-                    inventory accuracy.
-                  </p>
-                  <a href="#contact" class="btn btn-orange-pill btn-sm px-4"
-                    >Request database setup</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12">
-            <div class="horizontal-video-card">
-              <div class="row g-0 align-items-center">
-                <div class="col-lg-6">
-                  <div class="video-container-pane">
-                    <video controls loop muted playsinline>
-                      <source src="video.mp4" type="video/mp4" />
-                      Your browser does not support HTML video streaming.
-                    </video>
-                  </div>
-                </div>
-                <div class="col-lg-6 p-4 p-md-5">
-                  <span
-                    class="text-warning small fw-bold d-block mb-2 text-uppercase"
-                    >AGRICULTURAL MARKETPLACE PLATFORM
-                  </span>
-                  <h3 class="text-white h4 mb-3">
-                    Bridging the Gap Between Producers and Buyers
-                  </h3>
-                  <p class="text-secondary small mb-4">
-                    Built a platform designed to connect farmers directly with
-                    retailers, simplifying the process of buying and selling
-                    agricultural products. Farmers can list available produce,
-                    while retailers can browse offerings, compare options, and
-                    connect with suppliers through a single digital marketplace.
-                    The goal was to improve accessibility, increase market reach
-                    for farmers, and create a more efficient procurement process
-                    for retailers.
-                  </p>
-                  <a href="#contact" class="btn btn-orange-pill btn-sm px-4"
-                    >Request database setup</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
+    </section> -->
+
+    <section id="about" class="about-section section-padding">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="section-badge">Who We Are</div>
+                    <h2 class="section-title">Bridging Sophisticated Infrastructure with Scalable Software Architecture
+                    </h2>
+                    <p class="section-desc">At Vetrion Technologies, we design and build bespoke platforms that solve
+                        deeply integrated structural bottlenecks. We don't just write scripts; we map secure, long-term
+                        technological pathways for forward-thinking enterprises.</p>
+
+                    <div class="row g-4 mt-2">
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-start gap-3">
+                                <div class="about-icon-box"><i class="bi bi-shield-lock"></i></div>
+                                <div>
+                                    <h5 class="fw-bold text-primary-dark">Zero-Trust Security</h5>
+                                    <p class="text-muted small">Rigorous cryptographic verification engineered by
+                                        default.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-start gap-3">
+                                <div class="about-icon-box"><i class="bi bi-cpu"></i></div>
+                                <div>
+                                    <h5 class="fw-bold text-primary-dark">High Optimization</h5>
+                                    <p class="text-muted small">Resource-conscious algorithms tailored for peak
+                                        performance.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="about-img-frame position-relative">
+                        <div class="about-accent-box"></div>
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+                            alt="Vetrion Team Collaboration"
+                            class="img-fluid rounded-4 shadow-lg position-relative z-1">
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="languages" class="section-padding">
-      <div class="container">
-        <h2 class="section-title text-center">
-          Core Languages & <span>Technologies</span>
-        </h2>
-
-        <div class="text-center max-width-900 mx-auto">
-          <div class="tech-pill-badge">
-            <i class="bi bi-filetype-py text-warning"></i> Python
-          </div>
-
-          <div class="tech-pill-badge">
-            <i class="bi bi-braces text-warning"></i> JavaScript
-          </div>
-
-          <div class="tech-pill-badge">
-            <i class="bi bi-cpu text-info"></i> React
-          </div>
-
-          <div class="tech-pill-badge">
-            <i class="bi bi-terminal text-success"></i> Django
-          </div>
-
-          <div class="tech-pill-badge">
-            <i class="bi bi-code-slash text-danger"></i> Bootstrap
-          </div>
-
-          <div class="tech-pill-badge">
-            <i class="bi bi-database text-info"></i> MS SQL Server
-          </div>
-
-          <div class="tech-pill-badge">
-            <i class="bi bi-database-fill text-primary"></i> MySQL
-          </div>
-
-          <div class="tech-pill-badge">
-            <i class="bi bi-diagram-3 text-success"></i> MongoDB
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section
-      id="about"
-      class="section-padding"
-      style="
-        background-color: #0b0b0b;
-        border-top: 1px solid var(--border-dark);
-      "
-    >
-      <div class="container">
-        <h2 class="section-title text-center">About <span>Me</span></h2>
-
-        <div class="row g-5 align-items-center justify-content-center">
-          <div class="col-sm-10 col-md-5 col-lg-4">
-            <div class="hero-image-wrapper">
-              <img
-                src="profileimg.png"
-                class="w-100"
-                alt="Nikesh Working Profile Image"
-              />
+    <section id="services" class="services-section section-padding bg-light-gray">
+        <div class="container">
+            <div class="text-center max-w-700 mx-auto mb-5" data-aos="fade-up">
+                <div class="section-badge mx-auto">Core Capabilities</div>
+                <h2 class="section-title">Production-Grade Software Engineering</h2>
+                <p class="section-desc">We build digital products designed to scale fluidly from MVP stages directly up
+                    to high-availability global distributions.</p>
             </div>
-          </div>
-          <div class="col-md-7 col-lg-6">
-            <h3 class="h4 text-white mb-3">Hi, I'm Nikesh.</h3>
-            <p class="text-secondary mb-3" style="line-height: 1.7">
-              I'm a Full Stack Developer passionate about building scalable web
-              applications, efficient database systems, and intuitive digital
-              experiences. My journey began through hands-on development work,
-              where I contributed as an Intern at Snatcho and later became part
-              of the SIES College Website Management Team, helping maintain and
-              enhance web platforms used by students and faculty.
-            </p>
-            <p class="text-secondary mb-0" style="line-height: 1.7">
-              Over the years, I've worked on projects ranging from property
-              management systems and business applications to database-driven
-              platforms, focusing on clean architecture, performance, and
-              reliability. I enjoy transforming ideas into practical solutions
-              through thoughtful design, robust backend development, and
-              user-friendly interfaces. Today, I continue to explore modern
-              technologies while building software that is secure, scalable, and
-              designed to solve real-world problems.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section id="contact" class="section-padding">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <div class="custom-card">
-              <div class="text-center mb-5">
-                <h2 class="fw-bold text-white mb-2">
-                  Let's Build Your Project
-                </h2>
-                <p class="text-muted small">
-                  Have a custom script requirement, backend engineering problem,
-                  or application interface you want built? Share your goals
-                  below to receive a proposal outline.
-                </p>
-              </div>
-
-            <form id="contact-form">
-  <div class="row g-3">
-    <div class="col-md-6">
-      <label class="form-label text-white-50 small fw-semibold">Your Name</label>
-      <input
-        type="text"
-        id="user_name"
-        name="user_name"
-        class="form-control"
-        placeholder="Enter your full name"
-        required
-      />
-    </div>
-    <div class="col-md-6">
-      <label class="form-label text-white-50 small fw-semibold">Email Address</label>
-      <input
-        type="email"
-        id="user_email"
-        name="user_email"
-        class="form-control"
-        placeholder="name@domain.com"
-        required
-      />
-    </div>
-    <div class="col-12">
-      <label class="form-label text-white-50 small fw-semibold">Project Specifications & Objectives</label>
-      <textarea
-        id="project_details"
-        name="project_details"
-        class="form-control"
-        rows="5"
-        placeholder="Detail what you need me to build for you..."
-        required
-      ></textarea>
-    </div>
-    <div class="col-12 text-center mt-4">
-      <button
-        type="submit"
-        id="submit-btn"
-        class="btn btn-orange-pill px-5 py-3 text-uppercase"
-      >
-        Submit Project Request
-      </button>
-    </div>
-  </div>
-</form>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-layers"></i></div>
+                        <h4>Enterprise Web Applications</h4>
+                        <p>Robust, decoupled frameworks engineered for extreme horizontal scalability, high load
+                            resilience, and flawless data visualization pipelines.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-phone"></i></div>
+                        <h4>Cross-Platform Mobile</h4>
+                        <p>High-fidelity, hardware-optimized mobile application development leveraging cutting-edge
+                            architectures for native operational efficiency.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-database"></i></div>
+                        <h4>Relational Architecture</h4>
+                        <p>Transactional database optimization, automated staging procedures, schema alignment, and
+                            analytics designed to prevent performance bottlenecks.</p>
+                    </div>
+                </div>
+                <!-- <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-cloud-check"></i></div>
+                        <h4>DevOps & Automation</h4>
+                        <p>Continuous Integration, automated testing environments, containerization, and immutable state deployments built to minimize human error.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-bezier2"></i></div>
+                        <h4>API-First Integrations</h4>
+                        <p>Secure RESTful and GraphQL internal telemetry pipelines structured perfectly to connect historical legacy platforms with modern service layers.</p>
+                    </div>
+                </div> -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-shield-check"></i></div>
+                        <h4>Cybersecurity Audit</h4>
+                        <p>Proactive security profiling, vulnerability discovery pipelines, risk matrices, and
+                            comprehensive compliance auditing protocols.</p>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
-    <footer
-      class="py-4 text-center text-secondary small border-top border-secondary opacity-25"
-    >
-      <div class="container">
-        <p class="mb-0">
-          &copy; 2026 Nikesh. All code optimized for performance and fluid
-          viewport scaling.
-        </p>
-      </div>
+    <section id="tech-stack" class="tech-section section-padding">
+        <div class="container">
+            <div class="text-center max-w-700 mx-auto mb-5" data-aos="fade-up">
+                <div class="section-badge mx-auto">Our Engine</div>
+                <h2 class="section-title">The Vetrion Tech Ecosystem</h2>
+                <p class="section-desc">We deploy reliable, industry-standard languages and frameworks to write modern,
+                    safe, and easily maintainable codebases.</p>
+            </div>
+
+            <div class="row g-4 justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-xl-10">
+                    <div class="tech-grid-wrapper glass-card p-4 p-md-5">
+                        <div class="row g-5">
+                            <div class="col-md-4 col-sm-6">
+                                <h5 class="tech-cat-title"><i class="bi bi-code-slash text-accent me-2"></i>Frontend
+                                </h5>
+                                <ul class="tech-list list-unstyled">
+                                    <li>HTML5 &amp; CSS3 <span class="version-tag">Core</span></li>
+                                    <li>JavaScript <span class="version-tag">ES6+</span></li>
+                                    <li>Bootstrap 5 <span class="version-tag">UI Framework</span></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <h5 class="tech-cat-title"><i class="bi bi-terminal text-accent me-2"></i>Backend</h5>
+                                <ul class="tech-list list-unstyled">
+                                    <li>Django <span class="version-tag">Python</span></li>
+                                    <li>ASP.NET <span class="version-tag">C# / Core</span></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <h5 class="tech-cat-title"><i class="bi bi-server text-accent me-2"></i>Database</h5>
+                                <ul class="tech-list list-unstyled">
+                                    <li>SQL Server <span class="version-tag">Relational</span></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <h5 class="tech-cat-title"><i class="bi bi-phone text-accent me-2"></i>Mobile</h5>
+                                <ul class="tech-list list-unstyled">
+                                    <li>Flutter <span class="version-tag">android</span></li>
+                                    <!-- <li>.NET MAUI <span class="version-tag">Cross-Platform</span></li> -->
+                                </ul>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <h5 class="tech-cat-title"><i class="bi bi-tools text-accent me-2"></i>Tools &amp; Infra
+                                </h5>
+                                <ul class="tech-list list-unstyled">
+                                    <li>Git &amp; GitHub <span class="version-tag">VCS</span></li>
+                                    <li>Linux <span class="version-tag">OS Environment</span></li>
+                                    <li>Nginx <span class="version-tag">Web Server</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="industries" class="industries-section section-padding bg-light-gray">
+        <div class="container">
+            <div class="text-center max-w-700 mx-auto mb-5" data-aos="fade-up">
+                <div class="section-badge mx-auto">Domain Expertise</div>
+                <h2 class="section-title">Vertical Market Solutions</h2>
+                <p class="section-desc">We tailor software architectures to match the precise compliance standards and
+                    regulatory demands of specialized sectors.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="industry-card text-center p-5 bg-white rounded-4 shadow-sm h-100">
+                        <div class="industry-icon mb-4"><i class="bi bi-building"></i></div>
+                        <h5>Real Estate &amp; PropTech</h5>
+                        <p class="text-muted small mb-0">High-capacity listing aggregators, automated smart tenancy
+                            frameworks, escrow auditing infrastructure, and unified portfolio performance metrics.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="industry-card text-center p-5 bg-white rounded-4 shadow-sm h-100">
+                        <div class="industry-icon mb-4"><i class="bi bi-cart4"></i></div>
+                        <h5>AgriTech &amp; Retail</h5>
+                        <p class="text-muted small mb-0">Decoupled source-to-retailer systems, real-time supply matrix
+                            adjustments, predictive cold-chain tracking, and transparent marketplace networks.</p>
+                    </div>
+                </div>
+                <!-- <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="industry-card text-center p-5 bg-white rounded-4 shadow-sm h-100">
+                        <div class="industry-icon mb-4"><i class="bi bi-bank"></i></div>
+                        <h5>FinTech Ecosystems</h5>
+                        <p class="text-muted small mb-0">Transactional integrity pipelines, multi-tenant balance compliance infrastructure, localized gateway routing, and granular auditing ledgers.</p>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio-section section-padding">
+        <div class="container">
+            <div class="text-center max-w-700 mx-auto mb-5" data-aos="fade-up">
+                <div class="section-badge mx-auto">Case Studies</div>
+                <h2 class="section-title">Recent Enterprise Deployments</h2>
+                <p class="section-desc">Explore how our engineering teams resolved real-world transactional bottlenecks
+                    through elegant structural execution.</p>
+            </div>
+
+            <div class="row g-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="portfolio-item-card shadow-lg bg-white rounded-4 overflow-hidden h-100">
+                        <div class="portfolio-img-container position-relative">
+                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80"
+                                alt="Real Estate Platform" class="w-100 portfolio-image">
+                            <div class="portfolio-overlay d-flex align-items-center justify-content-center">
+                                <!-- <span class="btn btn-light rounded-pill px-4 py-2 fw-semibold">View Blueprint</span> -->
+                            </div>
+                        </div>
+                        <div class="p-4 p-md-5">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h4 class="portfolio-project-title mb-0">Real Estate Management Platform</h4>
+                                <span class="status-badge-deployed"><i class="bi bi-check-circle-fill me-1"></i>
+                                    Pipeline</span>
+                            </div>
+                            <p class="text-muted portfolio-project-desc">A highly-scalable multi-tenant operational
+                                portal architecture built to handle hundreds of thousands of cross-regional leasing
+                                allocations smoothly.</p>
+                            <div class="portfolio-tech-stack mt-4">
+                                <span class="badge tech-pill">Django</span>
+                                <span class="badge tech-pill">SQL Server</span>
+                                <span class="badge tech-pill">Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="portfolio-item-card shadow-lg bg-white rounded-4 overflow-hidden h-100">
+                        <div class="portfolio-img-container position-relative">
+                            <img src="https://images.unsplash.com/photo-1595246140625-573b715d11dc?auto=format&fit=crop&w=800&q=80"
+                                alt="Farmer-Retailer Marketplace" class="w-100 portfolio-image">
+                            <div class="portfolio-overlay d-flex align-items-center justify-content-center">
+                                <!-- <span class="btn btn-light rounded-pill px-4 py-2 fw-semibold">View Blueprint</span> -->
+                            </div>
+                        </div>
+                        <div class="p-4 p-md-5">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h4 class="portfolio-project-title mb-0">Farmer-Retailer Marketplace</h4>
+                                <span class="status-badge-deployed"><i class="bi bi-check-circle-fill me-1"></i>
+                                    Pipeline</span>
+                            </div>
+                            <p class="text-muted portfolio-project-desc">A highly distributed marketplace solution
+                                establishing clean, atomic-state transactions and real-time asset pricing metrics
+                                directly from farms to retail stores.</p>
+                            <div class="portfolio-tech-stack mt-4">
+                                <span class="badge tech-pill">Django</span>
+                                <span class="badge tech-pill">SQL Server</span>
+                                <span class="badge tech-pill">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="portfolio-item-card shadow-lg bg-white rounded-4 overflow-hidden h-100">
+                        <div class="portfolio-img-container position-relative">
+                            <img src="https://images.unsplash.com/photo-1647427017067-8f33ccbae493?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Real Estate Platform" class="w-100 portfolio-image">
+                            <div class="portfolio-overlay d-flex align-items-center justify-content-center">
+                                <!-- <span class="btn btn-light rounded-pill px-4 py-2 fw-semibold">View Blueprint</span> -->
+                            </div>
+                        </div>
+                        <div class="p-4 p-md-5">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h4 class="portfolio-project-title mb-0">Inventory Management </h4>
+                                <span class="status-badge-deployed"><i class="bi bi-check-circle-fill me-1"></i>
+                                    Pipeline</span>
+                            </div>
+                            <p class="text-muted portfolio-project-desc">
+                                A centralized inventory management system designed to streamline stock tracking,
+                                supplier management, and product transactions. The platform enables businesses to
+                                maintain accurate inventory records, reduce manual errors, monitor stock levels in real
+                                time, and improve operational efficiency through a user-friendly and scalable solution.
+                            </p>
+                            <div class="portfolio-tech-stack mt-4">
+                                <span class="badge tech-pill">Django</span>
+                                <span class="badge tech-pill">SQL Server</span>
+                                <span class="badge tech-pill">Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose-section section-padding bg-primary-dark text-white position-relative overflow-hidden">
+        <div class="section-bg-glow"></div>
+        <div class="container position-relative z-1">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="section-badge badge-accent-light">Operational Metrics</div>
+                    <h2 class="section-title text-white">Engineered for Reliable Performance</h2>
+                    <p class="text-white-50">We deliberately treat software engineering as an exact, deterministic
+                        science. Our priority is avoiding performance regressions and writing clean, long-lasting
+                        codebases.</p>
+                    <div class="mt-4">
+                        <a href="#contact" class="link-accent-arrow d-inline-flex align-items-center gap-2">View SLA
+                            Commitments <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="row g-4">
+                        <div class="col-sm-6">
+                            <div class="why-card glass-card p-4">
+                                <div class="why-icon-box text-accent mb-3"><i class="bi bi-code-square"></i></div>
+                                <h5 class="fw-bold">No Technical Debt</h5>
+                                <p class="text-white-50 small mb-0">Strict static analysis, automated linting pipelines,
+                                    and code cleanliness maintain absolute core transparency.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="why-card glass-card p-4">
+                                <div class="why-icon-box text-accent mb-3"><i class="bi bi-activity"></i></div>
+                                <h5 class="fw-bold">Real-time Telemetry</h5>
+                                <p class="text-white-50 small mb-0">Deep telemetry visibility alerts engine layers
+                                    instantly before real-world performance degradations materialize.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="why-card glass-card p-4">
+                                <div class="why-icon-box text-accent mb-3"><i class="bi bi-diagram-3"></i></div>
+                                <h5 class="fw-bold">Predictive Scaling</h5>
+                                <p class="text-white-50 small mb-0">Infrastructure models auto-scale compute workloads
+                                    elegantly to preserve seamless user interactions.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="why-card glass-card p-4">
+                                <div class="why-icon-box text-accent mb-3"><i class="bi bi-hand-thumbs-up"></i></div>
+                                <h5 class="fw-bold">Guaranteed SLAs</h5>
+                                <p class="text-white-50 small mb-0">Enterprise contracts guarantee uninterrupted
+                                    operational window support with dedicated engineering response squads.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="process-section section-padding">
+        <div class="container">
+            <div class="text-center max-w-700 mx-auto mb-5" data-aos="fade-up">
+                <div class="section-badge mx-auto">The Lifecycle</div>
+                <h2 class="section-title">Predictable, Iterative Engineering</h2>
+                <p class="section-desc">Our development process focuses on clear engineering goals, continuous
+                    performance tracking, and verified code releases.</p>
+            </div>
+
+            <div class="timeline-container position-relative mx-auto max-w-900">
+                <div class="timeline-line"></div>
+
+                <div class="timeline-item d-flex flex-column flex-md-row justify-content-between align-items-start mb-5"
+                    data-aos="fade-up">
+                    <div class="timeline-meta pe-md-4 mb-2 mb-md-0">
+                        <span class="timeline-step">01</span>
+                    </div>
+                    <div class="timeline-content glass-card p-4 flex-grow-1">
+                        <h5 class="fw-bold text-primary-dark">Discovery &amp; Topology Design</h5>
+                        <p class="text-muted small mb-0">We document requirements and design a technical map, planning
+                            the precise data models, api routing, and security protocols needed to build a stable core.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item d-flex flex-column flex-md-row justify-content-between align-items-start mb-5"
+                    data-aos="fade-up">
+                    <div class="timeline-meta pe-md-4 mb-2 mb-md-0">
+                        <span class="timeline-step">02</span>
+                    </div>
+                    <div class="timeline-content glass-card p-4 flex-grow-1">
+                        <h5 class="fw-bold text-primary-dark">Sprint-Driven Implementation</h5>
+                        <p class="text-muted small mb-0">Our developers execute precise code iterations within sandboxed
+                            staging sandboxes, pushing changes into test repositories with strict source documentation
+                            tracking.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item d-flex flex-column flex-md-row justify-content-between align-items-start mb-5"
+                    data-aos="fade-up">
+                    <div class="timeline-meta pe-md-4 mb-2 mb-md-0">
+                        <span class="timeline-step">03</span>
+                    </div>
+                    <div class="timeline-content glass-card p-4 flex-grow-1">
+                        <h5 class="fw-bold text-primary-dark">Continuous Integrity Validation</h5>
+                        <p class="text-muted small mb-0">We run every build through extensive multi-layered testing
+                            checks, automated script evaluations, and stress tests to maintain high-performance
+                            standards.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item d-flex flex-column flex-md-row justify-content-between align-items-start"
+                    data-aos="fade-up">
+                    <div class="timeline-meta pe-md-4 mb-2 mb-md-0">
+                        <span class="timeline-step">04</span>
+                    </div>
+                    <div class="timeline-content glass-card p-4 flex-grow-1">
+                        <h5 class="fw-bold text-primary-dark">Blue-Green Production Deployment</h5>
+                        <p class="text-muted small mb-0">We launch your application using smooth blue-green traffic
+                            switching methods, guaranteeing zero runtime downtime during major live upgrades.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section id="testimonials" class="testimonials-section section-padding bg-light-gray">
+        <div class="container">
+            <div class="text-center max-w-700 mx-auto mb-5" data-aos="fade-up">
+                <div class="section-badge mx-auto">Validation</div>
+                <h2 class="section-title">Trusted by Technical Directors</h2>
+                <p class="section-desc">See how engineering team leads describe their experiences working alongside Vetrion Technologies.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6" data-aos="fade-right">
+                    <div class="testimonial-card p-4 p-md-5 bg-white rounded-4 shadow-sm h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="stars-row text-warning mb-3"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                            <p class="testimonial-text text-muted italic">"The real estate data system designed by Vetrion handled our sudden scaling challenges effortlessly. Our data pipelines remain exceptionally reliable."</p>
+                        </div>
+                        <div class="d-flex align-items-center gap-3 mt-4 pt-3 border-top">
+                            <div class="user-avatar-placeholder">MT</div>
+                            <div>
+                                <h6 class="mb-0 fw-bold">Marcus Thorne</h6>
+                                <span class="text-muted small">VP of Architecture, Apex Real Estate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <div class="testimonial-card p-4 p-md-5 bg-white rounded-4 shadow-sm h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="stars-row text-warning mb-3"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                            <p class="testimonial-text text-muted italic">"Their Django and SQL Server optimizations were phenomenal. Query processing speeds dropped dramatically, saving our retail platform significant compute costs."</p>
+                        </div>
+                        <div class="d-flex align-items-center gap-3 mt-4 pt-3 border-top">
+                            <div class="user-avatar-placeholder text-purple">EV</div>
+                            <div>
+                                <h6 class="mb-0 fw-bold">Elena Vance</h6>
+                                <span class="text-muted small">Chief Technology Officer, AgroMart Global</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>  -->
+
+    <section class="cta-section section-padding text-white text-center position-relative overflow-hidden">
+        <div class="cta-gradient-overlay"></div>
+        <div class="container position-relative z-1" data-aos="zoom-in">
+            <h2 class="display-5 fw-bold mb-3">Ready to Upgrade Your Engineering Standards?</h2>
+            <p class="max-w-600 mx-auto text-white-50 mb-4 fs-5">Let's review your product roadmap and build highly
+                responsive, stable systems that match your enterprise goals perfectly.</p>
+            <a href="#contact" class="btn btn-light btn-lg text-primary-dark px-5 py-3 fw-semibold shadow">Initiate
+                Infrastructure Review</a>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section section-padding">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="section-badge">Contact Interface</div>
+                    <h2 class="section-title">Let's Connect</h2>
+                    <p class="section-desc">Submit your project details below to schedule an introductory engineering
+                        architecture review session with our core team.</p>
+
+                    <div class="contact-meta-list mt-4">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="contact-icon"><i class="bi bi-envelope"></i></div>
+                            <div>
+                                <span class="text-muted d-block small">Secure Communications</span>
+                                <a href="mailto:solutions@vetrion.io"
+                                    class="text-primary-dark fw-medium">vetrionsolution@gmail.com</a>
+                            </div>
+                        </div>
+                        <!-- <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="contact-icon"><i class="bi bi-geo-alt"></i></div>
+                            <div>
+                                <span class="text-muted d-block small">Corporate Office</span>
+                                <span class="text-primary-dark fw-medium">Tech District, Level 44, Suite 802</span>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="glass-card p-4 p-md-5 shadow-lg">
+                        <form id="contactForm" class="needs-validation" novalidate>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="clientName" class="form-label text-secondary small fw-medium">Full
+                                        Name</label>
+                                    <input type="text" class="form-control" id="clientName" required
+                                        placeholder="John Doe">
+                                    <div class="invalid-feedback">Name field is required.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="clientEmail" class="form-label text-secondary small fw-medium">Corporate
+                                        Email</label>
+                                    <input type="email" class="form-control" id="clientEmail" required
+                                        placeholder="john@enterprise.com">
+                                    <div class="invalid-feedback">A valid corporate email is required.</div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="projectScope" class="form-label text-secondary small fw-medium">Primary
+                                        Architecture Focus</label>
+                                    <select class="form-select" id="projectScope" required>
+                                        <option value="" selected disabled>Select Core Stack Allocation...</option>
+                                        <option value="web">Enterprise Web Systems (Django / ASP.NET)</option>
+                                        <option value="mobile">Mobile Deployments (Swift / .NET MAUI)</option>
+                                        <option value="database">Database Realignment (SQL Server)</option>
+                                        <option value="audit">Full Ecosystem Audit</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please select an engineering scope category.</div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="projectDetails" class="form-label text-secondary small fw-medium">System
+                                        Requirements Overview</label>
+                                    <textarea class="form-control" id="projectDetails" rows="4" required
+                                        placeholder="Outline performance bottlenecks or core goals..."></textarea>
+                                    <div class="invalid-feedback">Please provide clear initial requirement notes.</div>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <button type="submit" class="btn btn-primary-dark w-100 py-3">Transmit
+                                        Parameters</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div id="formSuccessAlert" class="alert alert-success d-none mt-3" role="alert">
+                            <i class="bi bi-check-circle-fill me-2"></i> Infrastructure inquiry successfully recorded.
+                            Our operations desk will respond within 4 business hours.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer bg-primary-dark text-white pt-5 pb-4 border-top border-secondary">
+        <div class="container">
+            <div class="row g-4 justify-content-between">
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3 text-white"><span class="brand-dot"></span>VETRION<span
+                            class="text-accent">.</span></h5>
+                    <p class="text-white-50 small">Premium, production-ready backend architectures, real estate
+                        frameworks, and distributed enterprise marketplace applications.</p>
+                    <!-- <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-white-50 hover-white"><i class="bi bi-github"></i></a>
+                        <a href="#" class="text-white-50 hover-white"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-white-50 hover-white"><i class="bi bi-twitter-x"></i></a>
+                    </div> -->
+                </div>
+                <div class="col-md-3">
+                    <h6 class="text-uppercase small tracking-wider text-accent mb-3 fw-bold">Ecosystem Core</h6>
+                    <ul class="list-unstyled footer-links small">
+                        <li><a href="#about" class="text-white-50">Corporate Profile</a></li>
+                        <li><a href="#services" class="text-white-50">Engineering Focus</a></li>
+                        <li><a href="#tech-stack" class="text-white-50">Languages & Tools</a></li>
+                        <li><a href="#portfolio" class="text-white-50">Case Deployments</a></li>
+                    </ul>
+                </div>
+                <!-- <div class="col-md-3">
+                    <h6 class="text-uppercase small tracking-wider text-accent mb-3 fw-bold">Compliance & Support</h6>
+                    <ul class="list-unstyled footer-links small">
+                        <li><a href="#" class="text-white-50">Master Service Level Agreements</a></li>
+                        <li><a href="#" class="text-white-50">Data Security Standards</a></li>
+                        <li><a href="#" class="text-white-50">Privacy Operations</a></li>
+                    </ul>
+                </div> -->
+            </div>
+            <hr class="border-secondary my-4">
+            <div class="row small text-white-50">
+                <div class="col-md-6 text-md-start text-center">
+                    <p class="mb-0">&copy; 2026 Vetrion Technologies. All engineering rights reserved.</p>
+                </div>
+                <!-- <div class="col-md-6 text-md-end text-center mt-2 mt-md-0">
+                    <span class="text-accent-light"><i class="bi bi-shield-fill-check"></i> TLS 1.3 Active
+                        Architecture</span>
+                </div> -->
+            </div>
+        </div>
     </footer>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
-    <script>
-      var typed = new Typed("#typed-text", {
-        strings: ["Nikesh"],
-        typeSpeed: 90, // Speed in milliseconds per character
-        backSpeed: 60, // Speed if you decide to add more words later
-        loop: true, // Set to true if you want it to repeat infinitely
-        showCursor: true, // Adds the flashing terminal cursor effect
-        cursorChar: "|",
-      });
-    </script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // Replace with your actual EmailJS Public Key
+            emailjs.init({
+                publicKey: "bw8h0MOGR3EGoVLkh",
+            });
+        })();
+    </script>
+    <script src="main.js"></script>
 
-<script type="text/javascript">
-  // Initialize EmailJS with your Public Key
-  (function() {
-      emailjs.init("bw8h0MOGR3EGoVLkh"); 
-  })();
+</body>
 
-  document.getElementById('contact-form').addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevents page from reloading on submit
-
-      const btn = document.getElementById('submit-btn');
-      const originalText = btn.innerText;
-      
-      // Provide immediate visual feedback to the user
-      btn.disabled = true;
-      btn.innerText = 'SENDING REQUEST...';
-
-      // Send the form data straight to your email template
-      // Arguments: emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
-      emailjs.sendForm('service_ulovidd', 'template_wies7ou', this)
-          .then(function() {
-              alert('Your project request was successfully sent!');
-              document.getElementById('contact-form').reset();
-          }, function(error) {
-              console.error('EmailJS Error:', error);
-              alert('Failed to send the request. Please try again.');
-          })
-          .finally(function() {
-              // Re-enable button state
-              btn.disabled = false;
-              btn.innerText = originalText;
-          });
-  });
-</script>
-  </body>
 </html>
